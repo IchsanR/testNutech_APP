@@ -1,0 +1,16 @@
+.itemImage{
+  border-radius: 10px;
+  height: 100px;
+  width: 100px;
+}
+
+.links {
+  text-decoration: none;
+}
+
+.itemButtons {
+  width: 120px;
+  height: 35px;
+  border: none;
+  color: white;
+}
