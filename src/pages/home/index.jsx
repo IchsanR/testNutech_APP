@@ -105,9 +105,11 @@ const Home = () => {
 		};
 		if (iduser !== userId) {
 			alert(
-				"Tidak bisa dihapus\nBarang ini dinput oleh " +
+				"Tidak bisa didelete\nBarang ini dinput oleh " +
 					name +
-					"\nSilahkan hapus barang yang diinput sendiri"
+					"\nSilahkan hubungi " +
+					name +
+					" untuk mendelete data"
 			);
 		} else {
 			deleteItem(id_barang, handleSuccess);
@@ -144,9 +146,11 @@ const Home = () => {
 
 		if (iduser !== userId) {
 			alert(
-				"Tidak bisa diupdat\nBarang ini dinput oleh " +
+				"Tidak bisa diupdate\nBarang ini dinput oleh " +
 					name +
-					"\nSilahkan hapus barang yang diinput sendiri"
+					"\nSilahkan hubungi " +
+					name +
+					" untuk mengupdate data"
 			);
 		} else {
 			updateItem(id_barang, inputForm, token, handleSuccess);
