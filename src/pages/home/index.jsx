@@ -128,7 +128,7 @@ const Home = () => {
 		setImage(fileUploaded);
 	};
 
-	const handleUpdate = (id_barang, e) => {
+	const handleUpdate = (id_barang, iduser, name, e) => {
 		console.log(image);
 		e.preventDefault();
 		const handleSuccess = (response) => {
@@ -143,6 +143,16 @@ const Home = () => {
 		inputForm.append("stok", formUpdate.stok);
 
 		updateItem(id_barang, inputForm, token, handleSuccess);
+
+		if (iduser !== userId) {
+			alert(
+				"Tidak bisa diupdat\nBarang ini dinput oleh " +
+					name +
+					"\nSilahkan hapus barang yang diinput sendiri"
+			);
+		} else {
+			deleteItem(id_barang, handleSuccess);
+		}
 	};
 
 	return (
@@ -354,7 +364,12 @@ const Home = () => {
 															</div>
 															<form
 																onSubmit={(e) =>
-																	handleUpdate(item.id_barang, e)
+																	handleUpdate(
+																		item.id_barang,
+																		item.iduser,
+																		item.name,
+																		e
+																	)
 																}>
 																<div className="modal-body">
 																	<div className="mb-3">
