@@ -142,8 +142,6 @@ const Home = () => {
 		inputForm.append("harga_jual", formUpdate.harga_jual);
 		inputForm.append("stok", formUpdate.stok);
 
-		updateItem(id_barang, inputForm, token, handleSuccess);
-
 		if (iduser !== userId) {
 			alert(
 				"Tidak bisa diupdat\nBarang ini dinput oleh " +
@@ -151,7 +149,7 @@ const Home = () => {
 					"\nSilahkan hapus barang yang diinput sendiri"
 			);
 		} else {
-			deleteItem(id_barang, handleSuccess);
+			updateItem(id_barang, inputForm, token, handleSuccess);
 		}
 	};
 
